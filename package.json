@@ -1,0 +1,47 @@
+{
+  "name": "electron-vue-tpl",
+  "version": "1.0.0",
+  "description": "description",
+  "main": "src/index.js",
+  "scripts": {
+    "prepare": "npx husky install",
+    "set-mirror": "npm config set ELECTRON_MIRROR http://npm.taobao.org/mirrors/electron/",
+    "dev-run": "cross-env NODE_ENV=dev electron .",
+    "start": "cross-env electron .",
+    "dist": "electron-builder --win --x64",
+    "lint-staged": "lint-staged",
+    "format": "prettier --write src/"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "build": {
+    "files": [
+      "!web/src/**",
+      "!web/node_modules/**"
+    ],
+    "appId": "test.tpl.app",
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.cds8.cn:chandashi/aiproject/frontend/chanying-desktop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^26.2.1",
+    "electron-builder": "^24.6.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  }
+}
