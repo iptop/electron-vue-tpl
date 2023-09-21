@@ -1,3 +1,3 @@
-# chanying-desktop
+# electron-vue-tpl
 
-蝉影桌面客户端
+electron + vue template
